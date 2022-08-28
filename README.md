@@ -1,4 +1,4 @@
-# test
+# Vue 3 Skeleton (TypeScript)
 
 ## Project setup
 ```
