@@ -4,7 +4,7 @@
         app
         shrink-on-scroll
     >
-      <v-app-bar-nav-icon></v-app-bar-nav-icon>
+      <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
 
       <v-toolbar-title>{{ $t('homepage') }}</v-toolbar-title>
 
@@ -15,6 +15,8 @@
       </v-btn>
     </v-app-bar>
 
+    <navigation :show="drawer"></navigation>
+
     <v-main>
       <router-view></router-view>
     </v-main>
@@ -23,12 +25,16 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
+import Navigation from './components/Navigation.vue';
 
 export default defineComponent({
   name: "App",
+  components: { Navigation },
 
   data() {
-    return {};
+    return {
+      drawer: false
+    };
   },
 });
 </script>
