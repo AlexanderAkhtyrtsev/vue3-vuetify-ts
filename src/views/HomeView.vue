@@ -2,11 +2,13 @@
   <v-container>
     <v-row>
       <v-col
-          v-for="n in 24"
+          v-for="n in 240"
           :key="n"
-          cols="4"
+          cols="2"
       >
-        <v-card height="200"></v-card>
+        <v-card>
+          <img :src="'https://picsum.photos/300?random=' + n" alt="Random image" />
+        </v-card>
       </v-col>
     </v-row>
   </v-container>
