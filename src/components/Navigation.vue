@@ -1,9 +1,9 @@
 <template>
   <v-navigation-drawer
-      v-model="draw"
-      absolute
+      :model-value="props.show"
+      absolute=""
       bottom
-      temporary
+      temporary=""
   >
     <v-list nav dense>
       <v-list-item-group
@@ -30,26 +30,10 @@
   </v-navigation-drawer>
 </template>
 
-<script>
-import { defineComponent } from "vue";
+<script setup lang="ts">
+import {defineProps} from "vue";
 
-export default defineComponent({
-  name: 'Navigation',
-  props: {
-    show: Boolean,
-    default: () => false
-  },
-  data() {
-    return {
-      draw: this.show
-    }
-  },
-  watch: {
-    show(show) {
-      this.draw = show;
-    }
-  }
-})
+const props = defineProps<{ show: boolean  }>();
 
 </script>
 
