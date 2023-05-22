@@ -4,7 +4,9 @@
       <v-col
           v-for="n in limit"
           :key="n"
-          :cols="12 / columnCount"
+          md="4"
+          sm="12"
+          cols="12"
       >
         <v-card>
           <img :src="`https://picsum.photos/seed/seed${n}/800`" style="width: 100%" alt="Random image" />
@@ -15,10 +17,9 @@
 </template>
 
 <script lang="ts" setup>
-import {onBeforeMount, onBeforeUnmount, onMounted, ref, watch} from "vue";
+import {onBeforeMount, onBeforeUnmount, ref, watch} from "vue";
 
 const limit = ref(12)
-const columnCount = ref(3)
 
 const scrollPosition = ref(0)
 
@@ -29,8 +30,7 @@ const scrollListener = () => {
 watch(scrollPosition, (v) => {
   const max = document.documentElement.scrollHeight - document.documentElement.clientHeight
   if ((v + 200) >= max)
-    limit.value += columnCount.value * 2
-
+    limit.value += 12
 })
 
 onBeforeMount(() => {
