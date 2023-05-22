@@ -1,8 +1,6 @@
 <template>
   <v-navigation-drawer
       :model-value="props.show"
-      absolute=""
-      bottom
       temporary=""
   >
     <v-list nav dense>
@@ -10,19 +8,7 @@
           active-class="deep-purple--text text--accent-4"
       >
         <v-list-item>
-          <v-list-item-title>Foo</v-list-item-title>
-        </v-list-item>
-
-        <v-list-item>
-          <v-list-item-title>Bar</v-list-item-title>
-        </v-list-item>
-
-        <v-list-item>
-          <v-list-item-title>Fizz</v-list-item-title>
-        </v-list-item>
-
-        <v-list-item>
-          <v-list-item-title>Buzz</v-list-item-title>
+          <v-list-item-title>TBD</v-list-item-title>
         </v-list-item>
 
       </v-list-item-group>
