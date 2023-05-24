@@ -9,7 +9,7 @@
           cols="12"
       >
         <v-card>
-          <img :src="`https://picsum.photos/seed/seed${n}/800`" style="width: 100%" alt="Random image" />
+          <img :src="`https://picsum.photos/seed/${seed + n}/800`" style="width: 100%" alt="Random image" />
         </v-card>
       </v-col>
     </v-row>
@@ -19,9 +19,11 @@
 <script lang="ts" setup>
 import {onBeforeMount, onBeforeUnmount, ref, watch} from "vue";
 
-const limit = ref(12)
+const limit = ref(12);
 
-const scrollPosition = ref(0)
+const scrollPosition = ref(0);
+
+const seed = (Math.random() * 1000).toFixed()
 
 const scrollListener = () => {
   scrollPosition.value = document.documentElement.scrollTop
