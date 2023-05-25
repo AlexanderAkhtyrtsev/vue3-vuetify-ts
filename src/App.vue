@@ -15,7 +15,7 @@
       </v-btn>
     </v-app-bar>
 
-    <navigation :show="drawer"></navigation>
+    <navigation-drawer :show="drawer"></navigation-drawer>
 
     <v-main>
       <router-view></router-view>
@@ -23,18 +23,9 @@
   </v-app>
 </template>
 
-<script lang="ts">
-import { defineComponent } from "vue";
-import Navigation from './components/Navigation.vue';
+<script lang="ts" setup>
+import { ref  } from "vue";
+import NavigationDrawer from './components/NavigationDrawer';
 
-export default defineComponent({
-  name: "App",
-  components: { Navigation },
-
-  data() {
-    return {
-      drawer: false
-    };
-  },
-});
+const drawer = ref(false);
 </script>
