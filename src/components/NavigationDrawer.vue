@@ -3,7 +3,7 @@
       :model-value="props.show"
       temporary=""
   >
-    <v-list nav dense>
+    <v-list nav="" dense>
       <v-list-item-group
           active-class="deep-purple--text text--accent-4"
       >
@@ -20,7 +20,6 @@
 import {defineProps} from "vue";
 
 const props = defineProps<{ show: boolean  }>();
-
 </script>
 
 <style scoped>
