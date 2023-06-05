@@ -1,5 +1,10 @@
 <template>
   <v-container>
+    <PreviewImageDialog v-if="showPreviewDialog"
+                   :id="showPreviewDialog"
+                   @close="showPreviewDialog = 0"
+    />
+
     <v-row>
       <v-col
           v-for="n in limit"
@@ -9,7 +14,7 @@
           cols="12"
       >
         <v-card>
-          <img :src="`https://picsum.photos/seed/${seed + n}/800`" style="width: 100%" alt="Random image" />
+          <img @click="showPreviewDialog = seed + n" :src="`https://picsum.photos/seed/${seed + n}/800`" style="width: 100%" alt="Random image" />
         </v-card>
       </v-col>
     </v-row>
@@ -18,6 +23,7 @@
 
 <script lang="ts" setup>
 import {onBeforeMount, onBeforeUnmount, ref, watch} from "vue";
+import PreviewImageDialog from "@/views/PreviewImageDialog.vue";
 
 const limit = ref(12);
 
@@ -28,6 +34,8 @@ const seed = (Math.random() * 1000).toFixed()
 const scrollListener = () => {
   scrollPosition.value = document.documentElement.scrollTop
 }
+
+const showPreviewDialog = ref(0);
 
 watch(scrollPosition, (v) => {
   const max = document.documentElement.scrollHeight - document.documentElement.clientHeight
@@ -42,4 +50,5 @@ onBeforeMount(() => {
 onBeforeUnmount(() => {
   window.removeEventListener('scroll', scrollListener)
 })
+
 </script>
