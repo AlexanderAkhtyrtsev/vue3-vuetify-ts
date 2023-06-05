@@ -1,4 +1,4 @@
-# Vue 3 Skeleton (TypeScript)
+# Vue 3 + Vuetify + TypeScript
 
 ## Project setup
 ```
