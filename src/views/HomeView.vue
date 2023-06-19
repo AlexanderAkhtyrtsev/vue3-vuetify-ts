@@ -1,5 +1,5 @@
 <template>
-  <v-container>
+  <v-container style="max-width:1000px">
     <PreviewImageDialog v-if="showPreviewDialog"
                    :id="showPreviewDialog"
                    @close="showPreviewDialog = 0"
